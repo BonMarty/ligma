@@ -1,7 +1,28 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-blue-1000: #2a8af6;
-  --color-purple-1000: #a853ba;
-  --color-red-1000: #e92a67;
+  @keyframes fluid {
+    0%,
+    100% {
+      transform: translate(0%, 0%);
+    }
+    33% {
+      transform: translate(-15%, -15%);
+    }
+    66% {
+      transform: translate(10%, -20%);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  --animate-fluid: fluid 10s ease-in-out infinite;
+  --animate-marquee: marquee 30s linear infinite;
 }

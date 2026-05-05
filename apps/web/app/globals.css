@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "@repo/tailwind-config";
+@import 'tailwindcss';
+@import '@repo/tailwind-config';
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -15,12 +15,20 @@
   }
 }
 
+html {
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth !important;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
