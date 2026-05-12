@@ -1,10 +1,8 @@
 'use client';
 
 import { Container } from '@repo/ui';
-import Link from 'next/link';
 import React from 'react';
 import { useCartStateContext, useCartUIDispatchContext } from '../../../entities/cart';
-import { ROUTES } from '../../../shared/routes';
 
 const activeClasses = ['bg-black'];
 const idleClasses = ['bg-transparent'];
@@ -39,21 +37,21 @@ export function Header() {
   }, []);
 
   return (
-    <header ref={headerRef} className="sticky top-0 left-0 right-0 h-fit z-20 transition-all duration-300">
-      <Container className="flex justify-between items-center p-6 gap-4">
-        <Link className="text-2xl font-medium" href={ROUTES.HOME.href}>
+    <header ref={headerRef} className="fixed top-0 left-0 right-0 h-fit z-20 transition-all duration-300 pointer-events-none">
+      <Container className="flex justify-between items-center p-6 gap-4 pointer-events-auto">
+        <a className="text-2xl font-medium" href={'/#'}>
           LIgma.
-        </Link>
+        </a>
         <nav className="space-x-6">
-          <Link className="cursor-pointer transition-all duration-300 hover:text-purple-500" href={'/#products'}>
+          <a className="cursor-pointer transition-all duration-300 text-gray-400 hover:text-white" href={'/#products'}>
             Товары
-          </Link>
-          <Link className="cursor-pointer transition-all duration-300 hover:text-purple-500" href={'/#about'}>
+          </a>
+          <a className="cursor-pointer transition-all duration-300 text-gray-400 hover:text-white" href={'/#about'}>
             О нас
-          </Link>
-          <Link className="cursor-pointer transition-all duration-300 hover:text-purple-500" href={'/#faq'}>
+          </a>
+          <a className="cursor-pointer transition-all duration-300 text-gray-400 hover:text-white" href={'/#faq'}>
             Вопросы
-          </Link>
+          </a>
         </nav>
         <CartIcon />
       </Container>

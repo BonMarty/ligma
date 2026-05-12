@@ -18,14 +18,14 @@ export default function Page() {
             <h2 className="text-3xl font-medium text-center">О нас</h2>
             <p className="text-lg text-center text-gray-300 w-full">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas eaque molestiae mollitia debitis libero suscipit dolor minus eos, eius totam error explicabo, dolore id impedit accusamus magni expedita sequi. Dignissimos accusantium, hic tempore repellat quas ratione perspiciatis illum iste accusamus eligendi sunt. Modi fugiat asperiores ex veniam dolorum, tempora quo.</p>
             <div className="relative flex w-full overflow-hidden mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] group gap-12">
-              <ul className="flex animate-marquee shrink-0 items-center justify-center gap-12 py-10 group-hover:[animation-play-state:paused]">
+              <ul className="flex animate-marquee shrink-0 items-center justify-center gap-12 py-10">
                 {Array.from({ length: 5 }, (_v, index) => (
                   <li key={index} className="flex-none px-[clamp(1rem,4vw,3rem)]">
                     Logo {index + 1}
                   </li>
                 ))}
               </ul>
-              <ul className="flex animate-marquee shrink-0 items-center justify-center gap-12 py-10 group-hover:[animation-play-state:paused]" aria-hidden="true">
+              <ul className="flex animate-marquee shrink-0 items-center justify-center gap-12 py-10" aria-hidden="true">
                 {Array.from({ length: 5 }, (_v, index) => (
                   <li key={index} className="flex-none px-[clamp(1rem,4vw,3rem)]">
                     Logo {index + 1}

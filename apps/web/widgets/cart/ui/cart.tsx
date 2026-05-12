@@ -29,7 +29,7 @@ export function Cart() {
 
   return (
     <section onClick={close} className={`${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} fixed w-screen h-screen inset-0 sm:backdrop-blur-xs bg-black/40 z-30 transition-all duration-500`}>
-      <div onClick={(e) => e.stopPropagation()} className={`${isOpen ? 'translate-x-0' : 'translate-x-full'} fixed top-0 right-0 bottom-0 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 h-full z-30 transition-all duration-500 bg-black px-4 py-12 flex flex-col gap-8`}>
+      <div onClick={(e) => e.stopPropagation()} className={`${isOpen ? 'translate-x-0' : 'translate-x-full'} fixed top-0 right-0 bottom-0 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 h-full z-30 transition-all duration-500 bg-neutral-950 px-4 py-12 flex flex-col gap-8`}>
         {items.length > 0 ? (
           <>
             <div className="text-3xl font-medium w-full flex justify-between items-center gap-4">
@@ -43,10 +43,10 @@ export function Cart() {
                 data={items}
                 renderHeader={() => (
                   <tr>
-                    <th className="sticky top-0 h-10 bg-black">ID</th>
-                    <th className="sticky top-0 h-10 bg-black">Название</th>
-                    <th className="sticky top-0 h-10 bg-black">Цена, &#8381;</th>
-                    <th className="sticky top-0 h-10 bg-black"></th>
+                    <th className="sticky top-0 h-10 bg-neutral-950">ID</th>
+                    <th className="sticky top-0 h-10 bg-neutral-950">Название</th>
+                    <th className="sticky top-0 h-10 bg-neutral-950">Цена, &#8381;</th>
+                    <th className="sticky top-0 h-10 bg-neutral-950"></th>
                   </tr>
                 )}
                 renderRow={(item) => (
