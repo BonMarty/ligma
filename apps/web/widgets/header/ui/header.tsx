@@ -15,21 +15,21 @@ export function Header() {
 
     const controller = new AbortController();
 
-    window.addEventListener(
-      'scroll',
-      () => {
-        if (window.scrollY > 0) {
-          headerRef.current?.classList.add(...activeClasses);
-          headerRef.current?.classList.remove(...idleClasses);
-        } else {
-          headerRef.current?.classList.add(...idleClasses);
-          headerRef.current?.classList.remove(...activeClasses);
-        }
-      },
-      {
-        signal: controller.signal,
-      },
-    );
+    function updateHeaderStyle() {
+      if (window.scrollY > 0) {
+        headerRef.current?.classList.add(...activeClasses);
+        headerRef.current?.classList.remove(...idleClasses);
+      } else {
+        headerRef.current?.classList.add(...idleClasses);
+        headerRef.current?.classList.remove(...activeClasses);
+      }
+    }
+
+    window.addEventListener('scroll', updateHeaderStyle, {
+      signal: controller.signal,
+    });
+
+    updateHeaderStyle();
 
     return () => {
       controller.abort();
